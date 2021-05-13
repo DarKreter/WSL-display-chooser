@@ -1,0 +1,7 @@
+SHOW_IP="cat /etc/resolv.conf"
+IP=$(eval "$SHOW_IP")
+IP=${IP#*1}
+IP="1$IP:0.0"
+SET_IP="export DISPLAY=$IP"
+$SET_IP
+export LIBGL_ALWAYS_INDIRECT=1
